@@ -43,3 +43,31 @@ to
 ```sh
 npm run dev
 ```
+### Create a `ts-rest` folder inside packages
+
+```sh
+|---> ts-rest
+    |---> src
+        |---> index.ts
+    |--- package.json
+```
+
+### Inside `package.json` add following code
+
+```json
+{
+    "name": "ts-rest",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".":"./dist.index.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch"
+    }
+}
+```
+
+```sh
+npm install typescript @ts-rest/core zod  
+```
