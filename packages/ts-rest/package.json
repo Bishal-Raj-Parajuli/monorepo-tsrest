@@ -1,5 +1,5 @@
 {
-    "name": "ts-rest",
+    "name": "@mono-repo/ts-rest",
     "types": "./dist/index.d.ts",
     "exports": {
         ".": "./dist.index.js"
