@@ -11,9 +11,9 @@ const TodoSchema = z.object({
 
 export type Todo = z.infer<typeof TodoSchema>;
 
-export const contract = c.router(
+export const contract = 
    {
-    todos:{
+    routes: c.router({
         create: {
             method: 'POST',
             path: '/todos',
@@ -73,6 +73,5 @@ export const contract = c.router(
                 })
             }
         }
-    }
-   } 
-)
+    })
+}
