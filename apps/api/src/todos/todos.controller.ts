@@ -1,18 +1,16 @@
-import { Body, Controller } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 import { TodosService } from './todos.service';
 import { tsRestHandler, TsRestHandler } from '@ts-rest/nest';
-import { contract, Todo } from '@mono-repo/ts-rest';
-import { async } from 'rxjs';
-
+import { APIContract } from '@mono-repo/ts-rest';
 
 @Controller('')
 export class TodosController {
 
   constructor(private readonly todosService: TodosService) {}
 
-  @TsRestHandler(contract.routes.getAll)
+  @TsRestHandler(APIContract.Todo.getAll)
   getTodos(){
-    return tsRestHandler(contract.routes.getAll,async () => {
+    return tsRestHandler(APIContract.Todo.getAll, async () => {
       const todos = await this.todosService.getAll();
       return {
         status: 200,
@@ -21,9 +19,9 @@ export class TodosController {
     })
   }
 
-  @TsRestHandler(contract.routes.create)
+  @TsRestHandler(APIContract.Todo.create)
   createTodo(){
-    return tsRestHandler(contract.routes.create, async ({body}) => {
+    return tsRestHandler(APIContract.Todo.create, async ({body}) => {
       const todo = await this.todosService.create({id: 2, ...body})
       return {
         status: 201,

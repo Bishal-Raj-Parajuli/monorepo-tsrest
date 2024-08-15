@@ -24,7 +24,9 @@
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/swagger": "^7.4.0",
     "@ts-rest/nest": "^3.49.3",
+    "@ts-rest/open-api": "^3.50.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },

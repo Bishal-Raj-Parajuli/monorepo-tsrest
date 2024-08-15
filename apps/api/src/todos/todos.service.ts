@@ -7,7 +7,6 @@ export class TodosService {
     private todos = [
         { id: 1, title: 'Sample Todo', description: 'This is a sample todo' }
       ];
-    
 
     getAll(){
         return this.todos;
