@@ -3,17 +3,19 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class TodosService {
+  private todos = [{ id: 1, title: 'Sample Todo' }];
 
-    private todos = [
-        { id: 1, title: 'Sample Todo', description: 'This is a sample todo' }
-      ];
+  getAll() {
+    return this.todos;
+  }
 
-    getAll(){
-        return this.todos;
-    }
+  create(todo: Todo) {
+    this.todos.push(todo);
+    return todo;
+  }
 
-    create(todo: Todo){
-        this.todos.push(todo)
-        return todo;
-    }
+  delete(id: number) {
+    this.todos = this.todos.filter((todo) => todo.id !== id);
+    return this.todos;
+  }
 }

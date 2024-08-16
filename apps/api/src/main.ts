@@ -13,9 +13,10 @@ async function bootstrap() {
       title: 'Test API',
       version: '1.0.0',
     },
-  })
+  });
   SwaggerModule.setup('api', app, openApiDocument);
 
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();

@@ -22,6 +22,7 @@ cd apps
 nest new server
 npm create vite@latest
 ```
+
 ### Install Dependencies
 
 ```sh
@@ -34,15 +35,19 @@ npm install
 ```json
 "start:dev": "nest start --watch",
 ```
+
 to
+
 ```json
 "dev": "nest start --watch",
 ```
 
 ### Run the app
+
 ```sh
 npm run dev
 ```
+
 ### Create a `ts-rest` folder inside packages
 
 ```sh
@@ -56,18 +61,18 @@ npm run dev
 
 ```json
 {
-    "name": "ts-rest",
-    "types": "./dist/index.d.ts",
-    "exports": {
-        ".":"./dist.index.js"
-    },
-    "scripts": {
-        "build": "tsc",
-        "dev": "tsc --watch"
-    }
+  "name": "ts-rest",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist.index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  }
 }
 ```
 
 ```sh
-npm install typescript @ts-rest/core zod  
+npm install typescript @ts-rest/core zod
 ```
