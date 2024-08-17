@@ -16,7 +16,7 @@ export default function TodoList() {
 
   const handleCreate = () => {
     createTodo.mutate({
-      id: 2,
+      id: Math.random(),
       title: todo,
     });
     setTodo('');
@@ -26,7 +26,7 @@ export default function TodoList() {
     deleteTodo.mutate(id);
   };
 
-  if (!todoList.data) return <>Loading...</>;
+  if(todoList.isFetching) return <>Loading...</>;
 
   return (
     <>
@@ -44,7 +44,7 @@ export default function TodoList() {
         </div>
       </div>
       <div className="flex flex-col gap-4 items-center justify-center">
-        {todoList.data.map((todo) => (
+        {todoList?.data?.map((todo) => (
           <span
             key={todo.id}
             className="w-[25%] flex justify-between rounded-lg p-2 border-2 border-gray-200 "

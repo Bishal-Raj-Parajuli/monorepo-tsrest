@@ -9,7 +9,7 @@ export const todoContract = {
     create: {
       method: "POST",
       path: "/todos",
-      body: TodoSchema.omit({ id: true }), // Omiting is excluding id properties
+      body: TodoSchema,
       responses: {
         201: TodoSchema,
       },

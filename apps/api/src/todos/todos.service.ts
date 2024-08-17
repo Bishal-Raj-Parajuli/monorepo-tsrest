@@ -10,7 +10,7 @@ export class TodosService {
   }
 
   create(todo: Todo) {
-    this.todos.push(todo);
+    this.todos.push({id: Math.random() + 1, title: todo.title});
     return todo;
   }
 

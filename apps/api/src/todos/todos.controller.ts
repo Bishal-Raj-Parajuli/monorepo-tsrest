@@ -21,7 +21,7 @@ export class TodosController {
   @TsRestHandler(APIContract.Todo.create)
   createTodo() {
     return tsRestHandler(APIContract.Todo.create, async ({ body }) => {
-      const todo = await this.todosService.create({ id: 2, ...body });
+      const todo = await this.todosService.create(body);
       return {
         status: 201,
         body: todo,
